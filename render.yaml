@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: wrlg-discord-bets-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CHANNEL_ID_FOR_WEEKLY
+        sync: false
+      - key: GUILD_ID
+        sync: false
