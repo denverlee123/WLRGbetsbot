@@ -1,0 +1,28 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "python bot.py",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+  "variables": [
+    {
+      "name": "DISCORD_TOKEN",
+      "description": "Bot token from Discord Developer Portal",
+      "required": true
+    },
+    {
+      "name": "CHANNEL_ID_FOR_WEEKLY",
+      "description": "Channel ID for weekly standings posts",
+      "required": true
+    },
+    {
+      "name": "GUILD_ID",
+      "description": "Optional: Server ID to speed up slash command sync",
+      "required": false
+    }
+  ]
+}
